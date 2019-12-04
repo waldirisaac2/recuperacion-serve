@@ -22,6 +22,14 @@ class ImagenesController extends Controller
         $formaciones= imagenes::find($id);
         return response()->json($formaciones);
     }
+    public function show2($id)
+    {
+        $imagenes = imagenes::join('catalogos','catalogosid','catalogos.id')->where("catalogos.id","=",$id)
+        ->select('imagenes.id','imagenes.titulo','imagenes.detalles','imagenes.url_imagen',
+        'imagenes.id_youtube','imagenes.url_audio','imagenes.principal','imagenes.catalogosid')
+        ->get();
+        return response()->json($imagenes);
+    }
     public function update(Request $request, $id)
     {
         imagenes::findOrFail($id)->update($request->all());

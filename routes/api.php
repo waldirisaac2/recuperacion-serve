@@ -19,10 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
       Route::delete('catalogos/{id}', 'CatalogosController@destroy');
       Route::get('catalogosusuario', 'CatalogosController@indexusuario');
       
-      Route::get('Imagenes', 'ImagenesController@index');
-      Route::get('Imagenes/{id}', 'ImagenesController@show');
-      Route::post('Imagenes', 'ImagenesController@create');
-      Route::put('Imagenes/{id}', 'ImagenesController@update');
-      Route::delete('Imagenes/{id}', 'ImagenesController@destroy');
-	  Route::get('Imagenesusuario', 'ImagenesController@indexusuario');
+      Route::get('imagenes', 'ImagenesController@index');
+      Route::get('imagenes/{id}', 'ImagenesController@show');
+      Route::get('imagenes2/{id}', 'ImagenesController@show2');
+      Route::post('imagenes', 'ImagenesController@create');
+      Route::put('imagenes/{id}', 'ImagenesController@update');
+      Route::delete('imagenes/{id}', 'ImagenesController@destroy');
+	  Route::get('imagenesusuario', 'ImagenesController@indexusuario');
 
