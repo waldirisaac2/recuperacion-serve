@@ -32,3 +32,4 @@ class CatalogosController extends Controller
         catalogos::findOrFail($id)->delete();
     }
 }
+
